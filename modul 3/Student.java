@@ -4,22 +4,22 @@ import java.util.List;
 public class Student {
 
     private String name;
-    private List<Book> books = new ArrayList<>();
+    private List<Textbook> textbooks = new ArrayList<>();
 
     public Student(String name) {
         this.name = name;
     }
 
-    public void addBook(Book book) {
-        books.add(book);
+    public void addTextbook(Textbook textbook) {
+        textbooks.add(textbook);
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public List<Textbook> getTextbooks() {
+        return textbooks;
     }
 
     @Override
     public String toString() {
-        return "Студент " + name + ", книг на полке: " + books.size();
+        return "Студент " + name + ", учебников на полке: " + textbooks.size();
     }
 }

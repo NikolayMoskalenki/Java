@@ -17,18 +17,18 @@ public class FileReaderDemo {
 
         students.stream()
                 .peek(student -> System.out.println(student))
-                .peek(student -> student.getBooks()
-                        .forEach(book -> System.out.println("    " + book)))
-                .flatMap(student -> student.getBooks().stream())
-                .sorted(Comparator.comparingInt(Book::getPages))
+                .peek(student -> student.getTextbooks()
+                        .forEach(textbook -> System.out.println("    " + textbook)))
+                .flatMap(student -> student.getTextbooks().stream())
+                .sorted(Comparator.comparingInt(Textbook::getPages))
                 .distinct()
-                .filter(book -> book.getYear() > 2000)
+                .filter(textbook -> textbook.getYear() > 2000)
                 .limit(3)
-                .map(Book::getYear)
+                .map(Textbook::getYear)
                 .findFirst()
                 .ifPresentOrElse(
-                        year -> System.out.println("Год выпуска найденной книги: " + year),
-                        () -> System.out.println("Такая книга отсутствует")
+                        year -> System.out.println("Год выпуска найденного учебника: " + year),
+                        () -> System.out.println("Такой учебник отсутствует")
                 );
     }
 
@@ -43,7 +43,7 @@ public class FileReaderDemo {
             int pages = Integer.parseInt(conversation[1]);
             int year = Integer.parseInt(conversation[2]);
 
-            student.addBook(new Book(title, pages, year));
+            student.addTextbook(new Textbook(title, pages, year));
         }
 
         return student;
