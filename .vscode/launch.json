@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ThreadB",
+            "request": "launch",
+            "mainClass": "ThreadB",
+            "projectName": "Java_48bee152"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
